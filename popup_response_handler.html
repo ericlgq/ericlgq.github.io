@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callback page</title>
+    <script src="//cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
+    
+</head>
+<body>
+<script type="text/javascript">
+
+var webAuth = new auth0.WebAuth({
+    popupOrigin: location.origin,
+    domain:       'g5studio.au.auth0.com',
+    clientID:     '-2HRH0zgWR1fWk0S8Cz9aKJ20c9XMgmd'
+});
+
+webAuth.popup.callback();
+
+</script>
+</body>
+</html>

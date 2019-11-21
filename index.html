@@ -1,8 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Hello</title>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <script src="//cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
 </head>
 <body>
-<h1>Hello, World!</h1>
+<script type="text/javascript">
+    if (Cookies.get('popup-logged-in')) {
+        alert('You are logged in already:' + JSON.stringify(Cookies.get('popup-logged-in')));
+    } else {
+
+        var webAuth = new auth0.WebAuth({
+            responseType: 'id_token token',
+            domain: 'g5studio.au.auth0.com',
+            clientID: '-2HRH0zgWR1fWk0S8Cz9aKJ20c9XMgmd'
+        });
+        webAuth.popup.authorize({
+            redirectUri: location.origin + '/popup_response_handler.html'
+            //Any additional options can go here
+        }, function (err, authResult) {
+            if (err) {
+                alert('ERROR: ' + JSON.stringify(err));
+                
+            } else {
+                
+                    Cookies.set('popup-logged-in', 'Yes');
+                    alert('SUCCESS: ' + JSON.stringify(authResult));
+                
+                
+            }
+        });
+
+
+    }
+
+</script>
 </body>
 </html>

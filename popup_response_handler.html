@@ -14,9 +14,9 @@ var webAuth = new auth0.WebAuth({
     domain:       'g5studio.au.auth0.com',
     clientID:     '-2HRH0zgWR1fWk0S8Cz9aKJ20c9XMgmd'
 });
-
+alert('I wanna callback');
 webAuth.popup.callback();
-
+window.close();
 </script>
 </body>
 </html>

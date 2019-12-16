@@ -18,6 +18,7 @@
             clientID: '-2HRH0zgWR1fWk0S8Cz9aKJ20c9XMgmd'
         });
         webAuth.popup.authorize({
+        prompt:'none',
             redirectUri: location.origin + '/popup_response_handler.html'
             //Any additional options can go here
         }, function (err, authResult) {

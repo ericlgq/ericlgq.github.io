@@ -8,15 +8,16 @@
 </head>
 <body>
 <script type="text/javascript">
-    if (Cookies.get('popup-logged-in')) {
-        alert('You are logged in already:' + JSON.stringify(Cookies.get('popup-logged-in')));
-    } else {
-
-        var webAuth = new auth0.WebAuth({
+webAuth = new auth0.WebAuth({
             responseType: 'token id_token',
             domain: 'g5studio.au.auth0.com',
             clientID: '-2HRH0zgWR1fWk0S8Cz9aKJ20c9XMgmd'
         });
+    if (Cookies.get('popup-logged-in')) {
+        alert('You are logged in already:' + JSON.stringify(Cookies.get('popup-logged-in')));
+    } else {
+
+        
         webAuth.popup.authorize({
         prompt:'none',
             redirectUri: location.origin + '/popup_response_handler.html'

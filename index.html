@@ -23,7 +23,7 @@ webAuth = new auth0.WebAuth({
         webAuth.popup.authorize({
         prompt:'none',
             redirectUri: location.origin + '/popup_response_handler.html'
-            //Any additional options can go here
+            //Any additional options can go here - Not really
         }, function (err, authResult) {
             if (err) {
                 console.error('ERROR: ' + JSON.stringify(err));

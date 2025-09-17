@@ -21,7 +21,7 @@ webAuth = new auth0.WebAuth({
 
         
         webAuth.authorize({
-        prompt:'none',
+        // prompt:'none',
             redirectUri: location.origin + '/popup_response_handler.html'
             //Any additional options can go here - Not really
         }, function (err, authResult) {
